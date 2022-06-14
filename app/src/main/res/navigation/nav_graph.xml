@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/registrationFragment">
+
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.example.usefulapp.presentation.fragments.authFragment.AuthFragment"
+        android:label="fragment_auth"
+        tools:layout="@layout/fragment_auth" >
+        <action
+            android:id="@+id/action_authFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.usefulapp.presentation.fragments.authFragment.RegistrationFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registrationFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_registrationFragment_to_secondRegistrationFragment"
+            app:destination="@id/secondRegistrationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/educationFragment"
+        android:name="com.example.usefulapp.presentation.fragments.educationFragment.EducationFragment"
+        android:label="fragment_education"
+        tools:layout="@layout/fragment_education" >
+        <action
+            android:id="@+id/action_educationFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.usefulapp.presentation.fragments.mainFragment.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/personalFragment"
+        android:name="com.example.usefulapp.presentation.fragments.personalFragment.PersonalFragment"
+        android:label="fragment_personal"
+        tools:layout="@layout/fragment_personal" >
+        <action
+            android:id="@+id/action_personalFragment_to_editPersonalFragment"
+            app:destination="@id/editPersonalFragment" />
+        <action
+            android:id="@+id/action_personalFragment_to_courseFragment"
+            app:destination="@id/courseFragment" />
+        <argument
+            android:name="personalModel"
+            app:nullable="true"
+            android:defaultValue="@null"
+            app:argType="com.example.usefulapp.domain.personals.models.PersonalModel" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.usefulapp.presentation.fragments.searchFragment.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.usefulapp.presentation.fragments.detailsFragment.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="courseModel"
+            app:argType="com.example.usefulapp.domain.mainAndCourse.model.CourseModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/editPersonalFragment"
+        android:name="com.example.usefulapp.presentation.fragments.personalFragment.EditPersonalFragment"
+        android:label="fragment_edit_personal"
+        tools:layout="@layout/fragment_edit_personal" >
+        <action
+            android:id="@+id/action_editPersonalFragment_to_personalFragment"
+            app:destination="@id/personalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/courseFragment"
+        android:name="com.example.usefulapp.presentation.fragments.courseFragment.CourseFragment"
+        android:label="fragment_course"
+        tools:layout="@layout/fragment_course" >
+        <action
+            android:id="@+id/action_courseFragment_to_personalFragment"
+            app:destination="@id/personalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondRegistrationFragment"
+        android:name="com.example.usefulapp.presentation.fragments.secondRegistration.SecondRegistrationFragment"
+        android:label="fragment_second_registrarion"
+        tools:layout="@layout/fragment_second_registrarion" >
+        <action
+            android:id="@+id/action_secondRegistrationFragment_to_personalFragment"
+            app:destination="@id/personalFragment" />
+    </fragment>
+    <fragment android:id="@+id/placeholder" />
+    <fragment
+        android:id="@+id/registrationFragment2"
+        android:name="com.example.usefulapp.presentation.fragments.authFragment.RegistrationFragment"
+        android:label="RegistrationFragment" />
+
+</navigation>
